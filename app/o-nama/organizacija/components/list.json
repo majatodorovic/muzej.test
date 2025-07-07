@@ -1,0 +1,256 @@
+[
+  {
+    "department": "",
+    "members": [
+      {
+        "mainPosition": "Direktor",
+        "title": "MSc",
+        "name": "Slavko Spasić",
+        "position": "viši kustos",
+        "email": "slavko.spasic@nhmbeo.rs"
+      }
+    ]
+  },
+  {
+    "department": "Odsek opštih i pravnih poslova",
+    "members": [
+      {
+        "title": "",
+        "name": "Ana Živanović",
+        "position": "sekretar",
+        "email": "ana.zivanovic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Ana Kovačević",
+        "position": "tehnički sekretar",
+        "email": "ana.kovacevic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Bora Milićević",
+        "position": "preparator – likovni tehničar",
+        "email": "bora.m@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Predrag Ilić",
+        "position": "preparator – tehničar grafičke pripreme",
+        "email": "pedja@nhmbeo.rs"
+      },
+      {
+        "title": "Msr",
+        "name": "Olivera Alomerović",
+        "position": "dipl. bibliotekar",
+        "email": "biblioteka@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Tatjana Mirić",
+        "position": "radnik za održavanje higijene",
+        "email": ""
+      },
+      {
+        "title": "",
+        "name": "Danijela Mijailović",
+        "position": "radnik za održavanje higijene",
+        "email": ""
+      },
+      {
+        "title": "",
+        "name": "Nevenka Janković",
+        "position": "radnik za održavanje higijene",
+        "email": ""
+      }
+    ]
+  },
+  {
+    "department": "Grupa za finansijsko-računovodstvene poslove",
+    "members": [
+      {
+        "title": "MSc",
+        "name": "Dušica Ivić",
+        "position": "pomoćnik direktora-rukovodilac odeljenja finansija",
+        "email": "dusica.ivic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Milena Radočaj",
+        "position": "finansijsko-računovodstveni referent",
+        "email": "milenar@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Milica Tomić",
+        "position": "finansijsko-računovodstveni saradnik",
+        "email": "milica@nhmbeo.rs"
+      }
+    ]
+  },
+  {
+    "department": "Biološko odeljenje",
+    "members": [
+      {
+        "title": "Dr",
+        "name": "Marjan Niketić",
+        "position": "rukovodilac Biološkog odeljenja, muzejski savetnik botaničar",
+        "email": "mniketic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Dubravka Vučić",
+        "position": "muzejski savetnik ihtiolog",
+        "email": "dubravka.vucic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Miloš Jović",
+        "position": "muzejski savetnik entomolog",
+        "email": "milos.jovic@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Boris Ivančević",
+        "position": "muzejski savetnik mikolog",
+        "email": "boris@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Ana Paunović",
+        "position": "muzejski savetnik herpetolog",
+        "email": "ana.paunovic@nhmbeo.rs"
+      },
+      {
+        "title": "Dipl.inž.",
+        "name": "Aleksandar Stojanović",
+        "position": "konzervator entomolog",
+        "email": "aleksandar@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Aleksandra Savić",
+        "position": "muzejski savetnik botaničar / etnobotaničar",
+        "email": "aleksandra.savic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Verica Stojanović",
+        "position": "kustos pripravnik",
+        "email": "verica.stojanovic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Gorana Petkovski",
+        "position": "konzervator",
+        "email": "gorana.petkovski@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Marko Nestorović",
+        "position": "muzejski savetnik botaničar / herbolog",
+        "email": "marko.nestorovic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Zorana Marković",
+        "position": "kustos",
+        "email": "zorana.markovic@nhmbeo.rs"
+      },
+      {
+        "title": "Msr",
+        "name": "Vuk Popić",
+        "position": "kustos pripravnik",
+        "email": "vuk.popic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Miloš Mrvaljević",
+        "position": "preparator pripravnik",
+        "email": "milos.mrvaljevic@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Jovan Kokotović",
+        "position": "kustos pripravnik",
+        "email": "jovan.kokotovic@nhmbeo.rs"
+      }
+    ]
+  },
+  {
+    "department": "Geološko odeljenje",
+    "members": [
+      {
+        "title": "Dr",
+        "name": "Biljana Mitrović",
+        "position": "načelnik Geološkog odeljenja, muzejski savetnik paleozoolog",
+        "email": "biljana.mitrovic@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Zoran Marković",
+        "position": "muzejski savetnik paleozoolog",
+        "email": "zoran.markovic@nhmbeo.rs"
+      },
+      {
+        "title": "Msr",
+        "name": "Sanja Alaburić",
+        "position": "muzejski savetnik paleozoolog",
+        "email": "sanja.pavic@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Aleksandra Maran Stevanović",
+        "position": "muzejski savetnik paleozoolog",
+        "email": "amaran@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Desa Đorđević-Milutinović",
+        "position": "muzejski savetnik, paleobotaničar",
+        "email": "desadjm@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Aleksandar Luković",
+        "position": "kustos mineralog",
+        "email": "aca.lukovic@nhmbeo.rs"
+      },
+      {
+        "title": "Dr",
+        "name": "Dragana Đurić",
+        "position": "muzejski savetnik paleozoolog",
+        "email": "dragana.djuric@nhmbeo.rs"
+      },
+      {
+        "title": "Tatjana",
+        "name": "Milić Babić",
+        "position": "viši kustos petrolog",
+        "email": "tatjana.milicbabic@nhmbeo.rs"
+      },
+      {
+        "title": "Dipl. inž.",
+        "name": "Ranko Pejović",
+        "position": "kustos paleozoolog",
+        "email": "pejovic.ranko@nhmbeo.rs"
+      },
+      {
+        "title": "",
+        "name": "Miloš Milivojević",
+        "position": "viši preparator za geološke zbirke",
+        "email": "milos.milivojevic@nhmbeo.rs"
+      },
+      {
+        "title": "Msr",
+        "name": "Branko Radulović",
+        "position": "kustos za geološke zbirke",
+        "email": "branko.radulovic@nhmbeo.rs"
+      },
+      {
+        "title": "Msr",
+        "name": "Nenad Mladenović",
+        "position": "konzervator pripravnik",
+        "email": "nenad.mladenovic@nhmbeo.rs"
+      }
+    ]
+  }
+]
