@@ -11,6 +11,7 @@ import SvgButtonOne from "../svg/Paths/SvgButtonOne";
 
 const Header = () => {
   const { data: categories } = useCategoryTree();
+  console.log("categories from useCategoryTree:", categories);
   const pathname = usePathname();
   const [hoveredChildId, setHoveredChildId] = useState(null);
   const router = useRouter();
@@ -18,10 +19,10 @@ const Header = () => {
   const categoriesMain = [
     {
       name: "Naslovna",
-      slug: "/naslovna",
+      slug: "/",
       isCategory: false,
     },
-    
+
     {
       name: "Posetite nas",
       slug: "/posetite-nas",
@@ -30,7 +31,7 @@ const Header = () => {
         {
           id: 1,
           name: "Radno vreme",
-          link: { link_path: "posetite-nas/radno-vreme#radno-vreme" },
+          link: { link_path: "posetite-nas/radno-vreme" },
         },
         {
           id: 2,
@@ -42,44 +43,49 @@ const Header = () => {
     ...(categories ? categories : []),
     {
       name: "O nama",
-      slug: "/o-nama",
+      slug: "/o-muzeju",
       isCategory: false,
       children: [
+        {
+          id: 0,
+          name: "O muzeju",
+          link: { link_path: "o-nama/o-muzeju" },
+        },
         {
           id: 1,
           name: "Organizacija",
           link: { link_path: "o-nama/organizacija" },
         },
-      
+
         {
           id: 2,
-          name: "Javno poslovanje",
-          link: { link_path: "o-nama/javno-poslovanje/javne-nabavke" },
-          children: [
-            {
-              id: 1,
-              name: "Javne nabavke",
-              link: {
-                link_path: "o-nama/javno-poslovanje/javne-nabavke",
-              },
-            },
-           
-            {
-              id: 2,
-              name: "Normativna akta",
-              link: { link_path: "o-nama/javno-poslovanje/normativna-akta" },
-            },
-            {
-              id: 3,
-              name: "Planovi i izveštaji",
-              link: {
-                link_path: "o-nama/javno-poslovanje/planovi-i-izvestaji",
-              },
-            },
-          ],
+          name: "Javne nabavke",
+          link: { link_path: "o-nama/javne-nabavke" },
+        },
+        {
+          id: 2,
+          name: "Javni poziv",
+          link: { link_path: "o-nama/javni-poziv" },
+        },
+        {
+          id: 2,
+          name: "Normativna akta",
+          link: { link_path: "o-nama/normativna-akta" },
+        },
+        {
+          id: 2,
+          name: "Planovi i izveštaji",
+          link: { link_path: "o-nama/planovi-i-izvestaji" },
         },
       ],
     },
+
+    {
+      name: "Izložbe",
+      slug: "/izlozbe",
+      isCategory: false,
+    },
+
     {
       name: "Istražite",
       slug: "/istrazite",
@@ -141,7 +147,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`max-xl:hidden ${visible} relative z-[100] w-full bg-secondary`}
+        className={`max-xl:hidden ${visible} relative z-[10000] w-full bg-secondary`}
         id="header"
       >
         <HeaderTop />
@@ -160,7 +166,7 @@ const Header = () => {
               const isDropdownItem =
                 category.slug === "/posetite-nas" ||
                 category.slug === "/istrazite" ||
-                category.slug === "/o-nama";
+                category.slug === "/o-muzeju";
 
               if (isDropdownItem) {
                 return (
@@ -176,7 +182,7 @@ const Header = () => {
                         {category.name}
                       </span>
                     </div>
-                    <div className="invisible absolute left-0 top-full z-[101] w-max min-w-[250px] rounded-xl bg-primary py-5 opacity-0 shadow-md transition-all group-hover:visible group-hover:opacity-100">
+                    <div className="invisible absolute left-0 top-full z-[1001] w-max min-w-[250px] rounded-xl bg-primary py-5 opacity-0 shadow-md transition-all group-hover:visible group-hover:opacity-100">
                       {category.children?.map((child) => (
                         <div
                           key={child.id}
@@ -223,19 +229,26 @@ const Header = () => {
 
               return (
                 <Link
-                href={category.slug.startsWith('/') ? category.slug : `/${category.slug}`}
-                key={index}
-                className="h-full"
-              >
-                <span
-                  className={`activeCategoryHover relative flex h-full w-fit items-center text-lg text-black 3xl:text-xl ${
-                    pathname.includes(category.slug) ? "activeCategory" : ""
-                  }`}
+                  href={
+                    category.slug.startsWith("/")
+                      ? category.slug
+                      : `/${category.slug}`
+                  }
+                  key={index}
+                  className="h-full"
                 >
-                  {category.name}
-                </span>
-              </Link>
-              
+                  <span
+                    className={`activeCategoryHover relative flex h-full w-fit items-center text-lg text-black 3xl:text-xl ${
+                      pathname.includes(category.slug)
+                        ? "activeCategory"
+                        : pathname === category.slug && category.id === 0
+                          ? "activeCategory"
+                          : ""
+                    }`}
+                  >
+                    {category.name}
+                  </span>
+                </Link>
               );
             })}
           </div>

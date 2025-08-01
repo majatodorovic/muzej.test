@@ -84,70 +84,71 @@ const NavigationMobile = () => {
 
   const categoriesMain = [
     {
+      name: "Naslovna",
+      slug: "/",
+      isCategory: false,
+    },
+    {
       name: "Posetite nas",
       slug: "/posetite-nas",
       isCategory: false,
       children: [
         {
           id: 1,
-          name: "Galerija Prirodnjačkog muzeja",
-          link: { link_path: "posetite-nas/galerija-prirodnjackog-muzeja" },
+          name: "Radno vreme",
+          link: { link_path: "posetite-nas/radno-vreme" },
         },
         {
           id: 2,
-          name: "Izložba u galeriji",
-          link: { link_path: "posetite-nas/izlozba-u-galeriji" },
+          name: "Cene",
+          link: { link_path: "posetite-nas/cene" },
         },
       ],
     },
     ...(categories ? categories : []),
     {
       name: "O nama",
-      slug: "/o-nama",
+      slug: "/o-muzeju",
       isCategory: false,
       children: [
+        {
+          id: 0,
+          name: "O muzeju",
+          link: { link_path: "o-nama/o-muzeju" },
+        },
         {
           id: 1,
           name: "Organizacija",
           link: { link_path: "o-nama/organizacija" },
         },
+
         {
           id: 2,
-          name: "Godišnjak prirodnjačkog muzeja",
-          link: { link_path: "o-nama/godisnjak-prirodnjackog-muzeja" },
+          name: "Javne nabavke",
+          link: { link_path: "o-nama/javne-nabavke" },
         },
         {
-          id: 3,
-          name: "Javno poslovanje",
-          link: { link_path: "o-nama/javno-poslovanje/javne-nabavke" },
-          children: [
-            {
-              id: 1,
-              name: "Javne nabavke",
-              link: {
-                link_path: "o-nama/javno-poslovanje/javne-nabavke",
-              },
-            },
-            {
-              id: 2,
-              name: "Javni poziv",
-              link: { link_path: "o-nama/javno-poslovanje/javni-poziv" },
-            },
-            {
-              id: 3,
-              name: "Normativna akta",
-              link: { link_path: "o-nama/javno-poslovanje/normativna-akta" },
-            },
-            {
-              id: 4,
-              name: "Planovi i izveštaji",
-              link: {
-                link_path: "o-nama/javno-poslovanje/planovi-i-izvestaji",
-              },
-            },
-          ],
+          id: 2,
+          name: "Javni poziv",
+          link: { link_path: "o-nama/javni-poziv" },
+        },
+        {
+          id: 2,
+          name: "Normativna akta",
+          link: { link_path: "o-nama/normativna-akta" },
+        },
+        {
+          id: 2,
+          name: "Planovi i izveštaji",
+          link: { link_path: "o-nama/planovi-i-izvestaji" },
         },
       ],
+    },
+
+    {
+      name: "Izložbe",
+      slug: "/izlozbe",
+      isCategory: false,
     },
     {
       name: "Istražite",
@@ -378,12 +379,17 @@ const NavigationMobile = () => {
                   </div>
                 ) : (
                   <Link
-                    href={`/${category.slug}`}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-lg font-medium"
-                  >
-                    {category.name}
-                  </Link>
+                  href={
+                    category.slug.startsWith("/")
+                      ? category.slug
+                      : `/${category.slug}`
+                  }
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg font-medium"
+                >
+                  {category.name}
+                </Link>
+                
                 )}
               </div>
             ))}

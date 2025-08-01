@@ -41,15 +41,11 @@ const Footer = () => {
           <div>
             <div className="mb-8 text-xl 3xl:text-2xl">O Nama</div>
             <div className="flex flex-col gap-1 font-light">
-              <Link href="/o-nama/organizaciona-struktura">
-                Organizacija
-              </Link>
+              <Link href="/o-nama/organizacija">Organizacija</Link>
               <Link href="/o-nama/godisnjak-prirodnjackog-muzeja">
                 Godišnjak Prirodnjačkog Muzeja
               </Link>
-              <Link href="/o-nama/javno-poslovanje/javne-nabavke">
-                Javno Poslovanje
-              </Link>
+              <Link href="/o-nama/javne-nabavke">Javne nabavke</Link>
             </div>
           </div>
           <div>
@@ -75,12 +71,10 @@ const Footer = () => {
           <div>
             <div className="mb-8 text-xl 3xl:text-2xl">Posetite nas</div>
             <div className="flex flex-col gap-1 font-light">
-              <Link href="/posetite-nas/galerija-prirodnjackog-muzeja">
+              <Link href="/galerija-prirodnjackog-muzeja">
                 Galerija Prirodnjačkog Muzeja
               </Link>
-              <Link href="/posetite-nas/izlozba-u-galeriji">
-                Izložba u Galeriji
-              </Link>
+              <Link href="/izlozbe">Izložbe</Link>
             </div>
           </div>
           <div>
@@ -93,7 +87,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        <div className={`notranslate mt-10 text-base font-normal text-white`}>
+          © {new Date().getFullYear()} Prirodnjački muzej | Sva prava zadržana.
+          Powered by{" "}
+          <a
+            target={`_blank`}
+            href={`https://www.croonus.com`}
+            className={`hover:text-boa-red`}
+          >
+            Croonus Technologies
+          </a>
+        </div>
       </div>
+
       <div className="flex-1">
         <Map />
       </div>

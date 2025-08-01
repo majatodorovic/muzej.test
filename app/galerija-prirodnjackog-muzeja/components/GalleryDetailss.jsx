@@ -1,6 +1,6 @@
 import SvgWithImage from "@/components/svg/Paths/SvgWithImage";
 
-const Exhibition= ({ data }) => {
+const Nova3 = ({ data }) => {
   return (
     <div
       data-aos="fade-up"
@@ -27,4 +27,4 @@ const Exhibition= ({ data }) => {
   );
 };
 
-export default Exhibition;
+export default Nova3;

@@ -43,18 +43,18 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="relative">
         <QueryProvider>
-        <AOSContainer>
-          <UserProvider>
-            <CartContextProvider>
-              <Header />
-              <NavigationMobile />
-              {children}
-              <Footer />
-              <ToastContainer />
-            </CartContextProvider>
-          </UserProvider>
-          <Suspense>
-            <AnalyticsGA4 />
+          <AOSContainer>
+            <UserProvider>
+              <CartContextProvider>
+                <Header />
+                <NavigationMobile />
+                {children}
+                <Footer />
+                <ToastContainer />
+              </CartContextProvider>
+            </UserProvider>
+            <Suspense>
+              <AnalyticsGA4 />
               <AnalyticsGTM />
             </Suspense>
           </AOSContainer>

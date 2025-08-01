@@ -4,7 +4,7 @@ import ListItemsWithPagination from "../components/ListItemsWithPagination";
 import BreadcrumbsStatic from "@/components/BreadcrumbsStatic/BreadcrumbsStatic";
 
 const POSTS_PER_PAGE = 10;
-const category = "planovi-i-izvestaji";
+const category = "javne-nabavke";
 
 async function fetchPosts(page = 1) {
   const res = await list(
@@ -12,13 +12,14 @@ async function fetchPosts(page = 1) {
   );
   return res?.payload || { items: [], pagination: { total_pages: 1 } };
 }
+
 const getCategoryData = async () => {
   return await get(`/news/categories/details/${category}`).then((res) => {
     return res?.payload;
   });
 };
 
-const PlanoviIIzvestaji = async () => {
+const JavneNabavke = async () => {
   const data = await fetchPosts(1);
   const allPosts = data.items || [];
   const totalPages = data.pagination?.total_pages || 1;
@@ -30,8 +31,7 @@ const PlanoviIIzvestaji = async () => {
       <BreadcrumbsStatic
         breadcrumbs={[
           { name: "O nama" },
-          { name: "Javno poslovanje" },
-          { name: "Planovi i izveštaji" },
+          { name: "Javne nabavke" },
         ]}
       />
       <ListItemsWithPagination
@@ -44,10 +44,10 @@ const PlanoviIIzvestaji = async () => {
   );
 };
 
-export default PlanoviIIzvestaji;
+export default JavneNabavke;
 
 export const metadata = {
-  title: "Planovi i izveštaji | Prirodnjački muzej",
+  title: "Javne nabavke | Prirodnjački muzej",
   description: "Prirodnjački muzej",
   robots: {
     index: true,

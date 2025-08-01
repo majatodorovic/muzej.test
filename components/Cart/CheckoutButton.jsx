@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import SvgButtonOne from "../svg/Paths/SvgButtonOne";
+
 const CheckoutButton = ({
   isPending,
   dataTmp,
@@ -59,8 +60,13 @@ const CheckoutButton = ({
       className="relative ml-auto mt-3 w-[250px]"
       onClick={() => {
         let err = [];
+
+        // Captcha validacija
+        if (!dataTmp?.captcha || typeof dataTmp?.captcha !== "string") {
+          err.push("captcha");
+        }
+
         (required ?? [])?.forEach((key) => {
-          //Error handling for countries
           if (
             dataTmp.id_country_shipping == "-" ||
             dataTmp.id_country_shipping == 0
@@ -74,8 +80,10 @@ const CheckoutButton = ({
             }
           }
         });
+
         setErrorsTmp(err);
-        if (err?.length === 0) {
+
+        if (err.length === 0) {
           checkOutMutate();
         } else {
           window.scrollTo(0, 0);

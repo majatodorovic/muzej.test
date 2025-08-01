@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 
-const ExhibitionPagination = () => {
+const Nova2 = () => {
   const searchParams = useSearchParams();
   const ticketsId = searchParams.get("tickets");
   const sectionRef = useRef(null);
@@ -213,4 +213,4 @@ const ExhibitionPagination = () => {
   );
 };
 
-export default ExhibitionPagination;
+export default Nova2;

@@ -9,6 +9,7 @@ import Image from "next/image";
 import SvgWithImage from "@/components/svg/Paths/SvgWithImage";
 
 const SinglePost = ({ post }) => {
+  console.log("SinglePost post prop:", post);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 

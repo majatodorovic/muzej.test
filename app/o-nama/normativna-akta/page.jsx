@@ -4,7 +4,7 @@ import ListItemsWithPagination from "../components/ListItemsWithPagination";
 import BreadcrumbsStatic from "@/components/BreadcrumbsStatic/BreadcrumbsStatic";
 
 const POSTS_PER_PAGE = 10;
-const category = "javne-nabavke";
+const category = "normativna-akta";
 
 async function fetchPosts(page = 1) {
   const res = await list(
@@ -19,7 +19,7 @@ const getCategoryData = async () => {
   });
 };
 
-const JavneNabavke = async () => {
+const NormativnaAkta = async () => {
   const data = await fetchPosts(1);
   const allPosts = data.items || [];
   const totalPages = data.pagination?.total_pages || 1;
@@ -31,8 +31,8 @@ const JavneNabavke = async () => {
       <BreadcrumbsStatic
         breadcrumbs={[
           { name: "O nama" },
-          { name: "Javno poslovanje" },
-          { name: "Javne nabavke" },
+       
+          { name: "Normativna akta" },
         ]}
       />
       <ListItemsWithPagination
@@ -45,10 +45,10 @@ const JavneNabavke = async () => {
   );
 };
 
-export default JavneNabavke;
+export default NormativnaAkta;
 
 export const metadata = {
-  title: "Javne nabavke | Prirodnjački muzej",
+  title: "Normativna akta | Prirodnjački muzej",
   description: "Prirodnjački muzej",
   robots: {
     index: true,

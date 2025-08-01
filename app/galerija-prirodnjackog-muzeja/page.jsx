@@ -1,9 +1,11 @@
 import { get } from "@/api/api";
+
+import Ticketss from "./components/Ticketss";
+import WorkingHourss from "./components/WorkingHourss";
 import SvgButtonOne from "@/components/svg/Paths/SvgButtonOne";
 import BreadcrumbsStatic from "@/components/BreadcrumbsStatic/BreadcrumbsStatic";
-import Exhibition from "./components/Exhibition";
-import ExhibitionPagination from "./components/ExhibitionPagination";
-import SingleExhibition from "./components/SingleExhibition";
+
+import GalleryDetailss from "./components/GalleryDetailss";
 
 const getCategoryData = async () => {
   return await get(
@@ -19,28 +21,26 @@ const GalerijaPrirodnjackogMuzeja = async () => {
   return (
     <>
       <BreadcrumbsStatic
-        breadcrumbs={[{ name: "Posetite nas" }, { name: "Cene" }]}
+       breadcrumbs={[{ name: "Galerija" }]}
       />
-      <Exhibition data={categoryData} />
+      <GalleryDetailss data={categoryData} />
       <div data-aos="fade-up" className="bg-secondary">
         <div className="sectionPaddingX flex gap-14 py-20 max-md:flex-col xl:gap-20">
           <div>
             <button className="relative mb-10">
               <SvgButtonOne className="h-[52px] w-[250px]" fill="#fff" />
               <div className="buttonText w-[250px] !text-primary">
-                Cene
+                Radno vreme
               </div>
             </button>
-           
-  <SingleExhibition/>
-
+            <WorkingHourss />
           </div>
           <div>
             <button className="relative mb-10">
               <SvgButtonOne className="h-[52px] w-[250px] rotate-180" />
               <div className="buttonText w-[250px]">Cene ulaznica</div>
             </button>
-            <ExhibitionPagination />
+            <Ticketss />
           </div>
         </div>
       </div>
