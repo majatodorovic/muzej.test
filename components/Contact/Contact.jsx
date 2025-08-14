@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import {
   GoogleReCaptchaProvider as Provider,
@@ -17,6 +18,7 @@ const ContactForm = ({ defaultMessage }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const [textOptions] = useState([
     { id: 1, buttonText: "Nađen markirani slepi miš", messageText: "Nađen markirani slepi miš. " },
     { id: 2, buttonText: "Nađena markirana ptica", messageText: "Nađena markirana ptica. " },
@@ -25,10 +27,12 @@ const ContactForm = ({ defaultMessage }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const isContactPage = pathname === "/kontakt";
+
   const [contactPageOptions] = useState([
     { id: 1, buttonText: "Prirodnjački muzej", value: "contact_page_prirodnjacki_muzej" },
     { id: 2, buttonText: "Galerija Prirodnjačkog muzeja", value: "contact_page_galerija_prirodnjackog_muzeja" },
   ]);
+
   const [contactPage, setContactPage] = useState(
     isContactPage ? contactPageOptions[0].value : "contact_page_centar_za_markiranje_zivotinja"
   );
@@ -45,18 +49,12 @@ const ContactForm = ({ defaultMessage }) => {
   useEffect(() => {
     const productId = searchParams.get("id");
     if (productId) {
-      setFormData((prev) => ({
-        ...prev,
-        message: `Potrebne informacije za proizvod ${productId}`,
-      }));
+      setFormData((prev) => ({ ...prev, message: `Potrebne informacije za proizvod ${productId}` }));
     }
   }, []);
 
   useEffect(() => {
-    setFormData((prev) => ({
-      ...prev,
-      page_section: contactPage,
-    }));
+    setFormData((prev) => ({ ...prev, page_section: contactPage }));
   }, [contactPage]);
 
   const requiredFields = ["customer_name", "email", "message"];
@@ -74,12 +72,9 @@ const ContactForm = ({ defaultMessage }) => {
     e.preventDefault();
     setLoading(true);
 
-    const errorsArr = [];
-    requiredFields.forEach((field) => {
-      if (!formData[field]) errorsArr.push(field);
-    });
+    // Validacija
+    const errorsArr = requiredFields.filter((field) => !formData[field]);
     setErrors(errorsArr);
-
     if (errorsArr.length > 0) {
       setLoading(false);
       return;
@@ -91,29 +86,33 @@ const ContactForm = ({ defaultMessage }) => {
       return;
     }
 
-    // Dobavi novi token
-    const token = await executeRecaptcha("contact_form");
+    try {
+      // UVEK uzmi novi token za svaki submit
+      const token = await executeRecaptcha("contact_form");
 
-    const response = await POST(
-      `/contact/contact_page?form_section=${contactPage}`,
-      { ...formData, gcaptcha: token, customer_name: formData.customer_name.trim() }
-    );
+      const response = await POST(
+        `/contact/contact_page?form_section=${contactPage}`,
+        { ...formData, gcaptcha: token, customer_name: formData.customer_name.trim() }
+      );
 
-    if (response?.code === 200) {
-      toast.success("Uspešno ste poslali poruku!", { position: "top-center", autoClose: 2000 });
-      setFormData({
-        page_section: contactPage,
-        customer_name: "",
-        phone: "",
-        email: "",
-        message: "",
-        gcaptcha: "",
-      });
-    } else {
-      toast.error("Došlo je do greške! Pokušajte ponovo.", { position: "top-center", autoClose: 2000 });
+      if (response?.code === 200) {
+        toast.success("Uspešno ste poslali poruku!", { position: "top-center", autoClose: 2000 });
+        setFormData({
+          page_section: contactPage,
+          customer_name: "",
+          phone: "",
+          email: "",
+          message: "",
+          gcaptcha: "",
+        });
+      } else {
+        toast.error("Došlo je do greške! Pokušajte ponovo.", { position: "top-center", autoClose: 2000 });
+      }
+    } catch (error) {
+      toast.error("Greška pri slanju poruke.", { position: "top-center", autoClose: 2000 });
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -212,11 +211,7 @@ const ContactForm = ({ defaultMessage }) => {
         )}
 
         <div className="flex w-full 2xl:w-2/3">
-          <button
-            onClick={handleSubmit}
-            className="relative w-[250px]"
-            disabled={loading}
-          >
+          <button onClick={handleSubmit} className="relative w-[250px]" disabled={loading}>
             <SvgButtonOne className="mx-auto h-[52px] w-[250px]" />
             <div className="buttonText">{loading ? <i className="fa fa-spinner fa-spin"></i> : "Pošalji"}</div>
           </button>
