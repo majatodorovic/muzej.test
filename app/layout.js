@@ -50,7 +50,8 @@ export default async function RootLayout({ children }) {
                 <NavigationMobile />
                 {children}
                 <Footer />
-                <ToastContainer />
+                <ToastContainer 
+                style={{ zIndex: 99999 }}/>
               </CartContextProvider>
             </UserProvider>
             <Suspense>

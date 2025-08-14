@@ -33,6 +33,7 @@ export const CheckoutData = ({
   setDataTmp,
   errorsTmp,
   setErrorsTmp,
+  token,
 }) => {
   const router = useRouter();
   const [selected, setSelected] = useState({
@@ -184,6 +185,8 @@ export const CheckoutData = ({
           setErrorsTmp={setErrorsTmp}
           checkOutMutate={checkOutMutate}
           selected={selected}
+          token={token}
+          setDataTmp={setDataTmp}
         />
         <div className="w-full xl:block">
           <FreeDeliveryScale summary={summary} />

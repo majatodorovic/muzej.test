@@ -98,6 +98,7 @@ const CartContainer = ({ refreshCart, cartData }) => {
           setDataTmp={setDataTmp}
           errorsTmp={errorsTmp}
           setErrorsTmp={setErrorsTmp}
+          token={token}
         />
       </Suspense>
     </CartWrapper>

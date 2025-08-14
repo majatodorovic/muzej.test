@@ -528,16 +528,16 @@ export const TextareaInput = ({
   };
 
   return (
-    <div className={`${className}`}>
+    <div className={`col-span-full ${className}`}>
       <div className="relative">
-        <SvgTextArea className="w-full " fill="#fff" />
+        <SvgTextArea className="w-full 2xl:w-1/2" fill="#fff" />
         <textarea
           placeholder={placeholder}
           value={value ?? data?.[name]}
           name={name}
           onChange={handleInputChange}
           id={id}
-          className={`mainInput2 w-full !py-10 ml-5`}
+          className={`mainInput2 w-full !py-10`}
         />
       </div>
       {errors?.includes(name) && (
