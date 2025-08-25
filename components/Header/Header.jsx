@@ -24,7 +24,7 @@ const Header = () => {
   ) || [];
 
   const categoriesMain = [
-    { name: "Naslovna", slug: "/", isCategory: false },
+   
     { name: "Prodavnica", slug: "/prodavnica", isCategory: false },
     { name: "Zbirke", slug: "/zbirke", isCategory: false },
     {
@@ -92,7 +92,8 @@ const Header = () => {
   return (
     <header className={`max-xl:hidden ${visible} relative z-[10000] w-full bg-secondary`} id="header">
       <HeaderTop />
-      <div className="sectionPaddingX flex h-[150px] items-center justify-between">
+      <div className="flex h-[150px] items-center justify-between px-4 md:px-6 lg:px-12">
+
         <Link href="/" className="flex items-center">
           <Image src="/images/logo/logo.gif" width={170} height={95} alt="logo" className="transform invert" />
         </Link>
